@@ -14,6 +14,7 @@ namespace NcuDirectoryBuilder.Model
         private string _userName;
         private int _weeks;
         private string _courseNumber;
+        private string _defaultDocumentPrefix;
 
         public string UserName
         {
@@ -58,6 +59,18 @@ namespace NcuDirectoryBuilder.Model
                 OnPropertyChanged();
             }
         }
+
+        public string DefaultDocumentPrefix
+        {
+            get => _defaultDocumentPrefix;
+            set
+            {
+                if (value == _defaultDocumentPrefix) return;
+                _defaultDocumentPrefix = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public string DefaultDocumentPath
         {

@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NcuDirectoryBuilder" 
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
         mc:Ignorable="d"
-        Title="NCU Directory Builder" Height="300" Width="500">
+        Title="NCU Directory Builder" Height="250" Width="550">
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -16,6 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />             
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -33,17 +35,26 @@
         <Label Grid.Row="1" Grid.Column="0">Course number: </Label>
         <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                  Text="{Binding CourseNumber, Mode=TwoWay}" />
+
         <Label Grid.Row="2" Grid.Column="0">Course name: </Label>
         <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                  Text="{Binding CourseName, Mode=TwoWay}" />
+
         <Label Grid.Row="3" Grid.Column="0">Course Path: </Label>
         <TextBox Grid.Row="3" Grid.Column="1"
                  Text="{Binding CoursePath, Mode=TwoWay}" />
         <Button Grid.Row="3" Grid.Column="2" Name="BtnCoursePath" Click="BtnCoursePath_OnClick">...</Button>
+        
         <Label Grid.Row="4" Grid.Column="0">Document Path: </Label>
         <TextBox Grid.Row="4" Grid.Column="1"
                  Text="{Binding DefaultDocumentPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <Button Grid.Row="4" Grid.Column="2" Name="BtnDocumentPatH" Click="BtnDocumentPatH_OnClick">...</Button>
-        <Button Grid.Row="6" Grid.Column="2" Name="BtnSubmit" Click="BtnSubmit_OnClick">Submit</Button>
+
+        <Label Grid.Row="5" Grid.Column="0">Course Weeks:</Label>
+        <xctk:IntegerUpDown Grid.Row="5" Grid.Column="1"
+                            Text="{Binding Weeks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="5" Grid.Column="2"></Label>
+
+        <Button Grid.Row="7" Grid.Column="2" Name="BtnSubmit" Click="BtnSubmit_OnClick">Submit</Button>
     </Grid>
 </Window>

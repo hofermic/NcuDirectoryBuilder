@@ -17,6 +17,8 @@ using System.IO;
 using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using Path = System.IO.Path;
+using Xceed.Wpf.Toolkit;
+using MessageBox = System.Windows.MessageBox;
 
 namespace NcuDirectoryBuilder
 {
